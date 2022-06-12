@@ -1,22 +1,28 @@
  # Arduino Programming Tutorial
 
-## Aim
-The aim of the project was to build an Arduino circuit for representing the commencement and end of the seminar with LEDs.
-
 ## Description
+<br>
+<br>
+> This project will aid students in their seminars. Each student will have 12 mins for their presentation. The Start of the seminar will be marked by a **Green**<!-- class = "animated infinite bounce" style = "color: green;" --> LED light which will glow for 10 mins. Following that, a **Yellow**<!-- class = "animated infinite bounce" style = "color: yellow;" --> LED light will glow for 100 secs which alerts the student and for the last 20 seconds, the **Yellow**<!-- class = "animated infinite bounce" style = "color: yellow;" --> LED light will blink. Finally, at the end of 12 mins, a  **Red**<!-- class = "animated infinite bounce" style = "color: red;" --> LED light will glow.
 
-This project will be used by the faculty at the time of seminars. Each student has a time of 12 mins for their presentation. The Start of the seminar is marked by a **green**<!-- class = "animated infinite bounce" style = "color: green;" --> LED light and after 10 mins **yellow**<!-- class = "animated infinite bounce" style = "color: yellow;" --> LED light glows which alerts the student for the last 20 seconds the **yellow**<!-- class = "animated infinite bounce" style = "color: yellow;" --> LED light will flash and finally after 12 mins **red**<!-- class = "animated infinite bounce" style = "color: red;" --> LED light will glow.
+
+## Circuit Diagram
+<br>
+![Circuit Diagram](Images%5CCircuit%20Diagram%201.jpg "Circuit Diagram")
 
 
+## Schematic Circuit Diagram
+<br>
+![Schematic Circuit Diagram](Images%5CSchematic%20Circuit%20Diagram.jpg)
 
 ## Code
 
 
 ```C++
 
-#define ledG 3
-#define ledY 4
-#define ledR 5
+#define ledG 1
+#define ledY 2
+#define ledR 3
 
 void setup() {
   
@@ -51,3 +57,11 @@ void loop() {
 }
 
 ```
+
+
+## Working
+<br>
+
+!?[Sample](Images%5CVID_20220612172500.mp4 "Sample video")
+
+
