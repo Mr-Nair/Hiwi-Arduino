@@ -9,12 +9,13 @@
 ## Circuit Diagram
 <br>
 
-![Circuit Diagram](Images%5CCircuit%20Diagram%201.jpg "Circuit Diagram")
+![Circuit Diagram](Images/Circuit_diagram_1.jpg "Circuit Diagram")
+
 
 ## Schematic Circuit Diagram
 <br>
 
-![Schematic Circuit Diagram](Images%5CSchematic%20Circuit%20Diagram.jpg)
+![Schematic Circuit Diagram](Images/Schematic_Circuit_Diagram.jpg)
 
 ## Code
 
@@ -62,4 +63,11 @@ void loop() {
 
 ## Working
 
-[![Sample](Images%5CPreview.jpg "Sample")](https://drive.google.com/file/d/1LYy5S1VNz3TDUTJ7OvT6Ml81gBZ1a26j/view?usp=drivesdk)
+
+
+<figure class="video_container">
+  <video controls="true" width=700
+   poster="Images/Preview.jpg">
+    <source src="Images/VID_20220612172500.mp4" type="video/mp4">
+  </video>
+</figure>
