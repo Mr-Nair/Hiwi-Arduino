@@ -8,11 +8,12 @@
 
 ## Circuit Diagram
 <br>
-![Circuit Diagram](Images%5CCircuit%20Diagram%201.jpg "Circuit Diagram")
 
+![Circuit Diagram](Images%5CCircuit%20Diagram%201.jpg "Circuit Diagram")
 
 ## Schematic Circuit Diagram
 <br>
+
 ![Schematic Circuit Diagram](Images%5CSchematic%20Circuit%20Diagram.jpg)
 
 ## Code
