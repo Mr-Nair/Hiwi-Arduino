@@ -9,7 +9,7 @@
 ## Circuit Diagram
 <br>
 
-![Circuit Diagram](Images/Circuit_diagram_1.jpg "Circuit Diagram")
+![Circuit Diagram](Images/Circuit_Diagram_1.jpg "Circuit Diagram")
 
 
 ## Schematic Circuit Diagram
