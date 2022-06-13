@@ -60,8 +60,5 @@ void loop() {
 
 
 ## Working
-<br>
 
-!?[Sample](Images%5CVID_20220612172500.mp4 "Sample video")
-
-
+[![Sample](Images%5CPreview.jpg "Sample")](https://drive.google.com/file/d/1LYy5S1VNz3TDUTJ7OvT6Ml81gBZ1a26j/view?usp=drivesdk)
