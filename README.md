@@ -39,7 +39,7 @@ import: https://fjangfaragesh.github.io/AVR8js-mem/INCLUDE.md
 ## Question Time!!
 
 > Which leg of this LED is Anode?<img src=Images\led.avif width="150" height="150" />
-- [(x)] Left
+- [(X)] Left
 - [( )] Right
 
 > Which are the commonly Arduino board(s)?
