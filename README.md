@@ -128,24 +128,24 @@ pinMode(ledR, OUTPUT);
 void loop() {
 
  digitalWrite (ledG,1);
- delay(6000);   //activates green light for 10min ie. 10x60x1000 millisec
- digitalWrite (ledG,0);
- digitalWrite (ledY,1);
- delay(1000); //activates yellow light for 100 seconds
+ delay(10000);   //activates green light for 10 sec
+  digitalWrite (ledG,0); 
+  digitalWrite (ledY,1);
+ delay(5000); //activates yellow light for 5 seconds 
  int i=0;
-    while( i<21) //20 sec  blinking of yellow light
+    while( i<5) //5 sec  blinking of yellow light
     {  
-       delay(500);
+       delay(500); 
        digitalWrite (ledY,0);
        delay(500);
        digitalWrite (ledY,1);
         i++;
  }
   digitalWrite (ledY,0);
-
+  
  digitalWrite (ledR,1);
- delay(1000);
- digitalWrite (ledR,0);
+ delay(5000);
+  digitalWrite (ledR,0);
 }
 ```
 @AVR8jsMem.sketch(example1)
