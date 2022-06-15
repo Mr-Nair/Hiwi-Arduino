@@ -1,4 +1,19 @@
- # Arduino Programming Tutorial
+<!--
+
+author:   Sebastian Zug
+email:    sebastian.zug@informatik.tu-freiberg.de
+version:  0.0.1
+language: de
+narrator: Deutsch Female
+
+import: https://fjangfaragesh.github.io/AVR8js-mem/INCLUDE.md
+-->
+
+
+
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/LiaPlayground/LiaScript_WeAreDevelopers2022/master/README.md#1)
+
+# Arduino Programming Tutorial
 
 ## Description
 <br>
@@ -19,15 +34,13 @@
 
 ## Code
 
-
-```C++
-
+```cpp   TrafficLight.ino
 #define ledG 1
 #define ledY 2
 #define ledR 3
 
 void setup() {
-  
+
 pinMode(ledG, OUTPUT);
 pinMode(ledY, OUTPUT);
 pinMode(ledR, OUTPUT);
@@ -37,33 +50,72 @@ void loop() {
 
  digitalWrite (ledG,1);
  delay(600000);   //activates green light for 10min ie. 10x60x1000 millisec
-  digitalWrite (ledG,0); 
-  digitalWrite (ledY,1);
- delay(100000); //activates yellow light for 100 seconds 
+ digitalWrite (ledG,0);
+ digitalWrite (ledY,1);
+ delay(100000); //activates yellow light for 100 seconds
  int i=0;
     while( i<21) //20 sec  blinking of yellow light
     {  
-       delay(500); 
+       delay(500);
        digitalWrite (ledY,0);
        delay(500);
        digitalWrite (ledY,1);
         i++;
  }
   digitalWrite (ledY,0);
-  
+
  digitalWrite (ledR,1);
  delay(1000);
   digitalWrite (ledR,0);
- 
-
 }
-
 ```
 
+## Working in simulation
 
-## Working
+<div id="example1">
+<wokwi-led color="green" pin="1" label="1"></wokwi-led>
+<wokwi-led color="yellow" pin="2" label="2"></wokwi-led>
+<wokwi-led color="red" pin="3" label="3"></wokwi-led>
+<span id="simulation-time"></span>
+</div>
+```cpp   TrafficLight.ino
+#define ledG 1
+#define ledY 2
+#define ledR 3
 
+void setup() {
 
+pinMode(ledG, OUTPUT);
+pinMode(ledY, OUTPUT);
+pinMode(ledR, OUTPUT);
+}
+
+void loop() {
+
+ digitalWrite (ledG,1);
+ delay(6000);   //activates green light for 10min ie. 10x60x1000 millisec
+ digitalWrite (ledG,0);
+ digitalWrite (ledY,1);
+ delay(1000); //activates yellow light for 100 seconds
+ int i=0;
+    while( i<21) //20 sec  blinking of yellow light
+    {  
+       delay(500);
+       digitalWrite (ledY,0);
+       delay(500);
+       digitalWrite (ledY,1);
+        i++;
+ }
+  digitalWrite (ledY,0);
+
+ digitalWrite (ledR,1);
+ delay(1000);
+ digitalWrite (ledR,0);
+}
+```
+@AVR8jsMem.sketch(example1)
+
+## Working in real world
 
 <figure class="video_container">
   <video controls="true" width=700
