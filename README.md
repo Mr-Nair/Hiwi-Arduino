@@ -6,7 +6,12 @@ version:  0.0.1
 language: de
 narrator: Deutsch Female
 
+import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
+
+
 import: https://fjangfaragesh.github.io/AVR8js-mem/INCLUDE.md
+
+
 -->
 
 
@@ -39,8 +44,8 @@ import: https://fjangfaragesh.github.io/AVR8js-mem/INCLUDE.md
 ## Question Time!!
 
 > Which leg of this LED is Anode?<img src=Images\led.avif width="150" height="150" />
-- [(x)] Left
-- [( )] Right
+[(X)] Left
+[( )] Right
 
 > Which are the commonly Arduino board(s)?
 [[X]] Arduino UNO
@@ -64,7 +69,7 @@ import: https://fjangfaragesh.github.io/AVR8js-mem/INCLUDE.md
 
 ## Code
 
-```cpp   TrafficLight.ino
+```cpp   LED Light
 #define ledG 1
 #define ledY 2
 #define ledR 3
@@ -102,24 +107,19 @@ void loop() {
 
 ## Working in simulation
 
-<<<<<<< HEAD
-
-## Working
-=======
 <div id="example1">
 <wokwi-led color="green" pin="1" label="1"></wokwi-led>
 <wokwi-led color="yellow" pin="2" label="2"></wokwi-led>
 <wokwi-led color="red" pin="3" label="3"></wokwi-led>
-<span id="simulation-time"></span>
-</div>
-```cpp   TrafficLight.ino
+<span id="simulation-time"></span></div>
+
+```cpp
 #define ledG 1
 #define ledY 2
 #define ledR 3
->>>>>>> c0c3a37118c813bc516d479c6e36942aadcddfbf
+
 
 void setup() {
-
 pinMode(ledG, OUTPUT);
 pinMode(ledY, OUTPUT);
 pinMode(ledR, OUTPUT);
@@ -127,28 +127,28 @@ pinMode(ledR, OUTPUT);
 
 void loop() {
 
- digitalWrite (ledG,1);
+ digitalWrite(ledG, HIGH);
  delay(10000);   //activates green light for 10 sec
-  digitalWrite (ledG,0); 
-  digitalWrite (ledY,1);
+  digitalWrite(ledG, LOW); 
+  digitalWrite(ledY, HIGH);
  delay(5000); //activates yellow light for 5 seconds 
  int i=0;
     while( i<5) //5 sec  blinking of yellow light
     {  
        delay(500); 
-       digitalWrite (ledY,0);
+       digitalWrite(ledY, LOW);
        delay(500);
-       digitalWrite (ledY,1);
+       digitalWrite(ledY, HIGH);
         i++;
  }
-  digitalWrite (ledY,0);
-  
- digitalWrite (ledR,1);
+  digitalWrite(ledY, LOW);
+ digitalWrite(ledR, HIGH);
  delay(5000);
-  digitalWrite (ledR,0);
+  digitalWrite(ledR, LOW);
 }
+
 ```
-@AVR8jsMem.sketch(example1)
+@AVR8js.sketch
 
 ## Working in real world
 
@@ -158,3 +158,6 @@ void loop() {
     <source src="Images/VID_20220612172500.mp4" type="video/mp4">
   </video>
 </figure>
+
+
+ 
