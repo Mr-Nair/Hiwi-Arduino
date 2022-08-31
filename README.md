@@ -9,8 +9,6 @@ narrator: Deutsch Female
 import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 
-import: https://fjangfaragesh.github.io/AVR8js-mem/INCLUDE.md
-
 
 -->
 
@@ -72,53 +70,130 @@ import: https://fjangfaragesh.github.io/AVR8js-mem/INCLUDE.md
 ## Code
 
 ```cpp   LED Light
-#define ledG 1
-#define ledY 2
-#define ledR 3
 
-void setup() {
+#include <LiquidCrystal.h>
+LiquidCrystal lcd(8, 9, 4, 5, 6, 7); 
 
+#define ledG 13
+#define ledY 12
+#define ledR 11
+
+boolean startsignal = HIGH;
+
+
+void setup()
+{
+  
 pinMode(ledG, OUTPUT);
 pinMode(ledY, OUTPUT);
 pinMode(ledR, OUTPUT);
+
+lcd.begin(16, 2);
+lcd.clear();
+Serial.begin(9600);
+lcd.setCursor(0,0);
+lcd.print("   Welcome To");
+lcd.setCursor(0,1);
+lcd.print("  Time Keeper!");
+delay(2000);
 }
 
-void loop() {
+int s = 0;
+int m;
+long a;
+long c;
 
- digitalWrite (ledG,1);
- delay(600000);   //activates green light for 10min ie. 10x60x1000 millisec
- digitalWrite (ledG,0);
- digitalWrite (ledY,1);
- delay(100000); //activates yellow light for 100 seconds
- int i=0;
-    while( i<21) //20 sec  blinking of yellow light
-    {  
-       delay(500);
-       digitalWrite (ledY,0);
-       delay(500);
-       digitalWrite (ledY,1);
-        i++;
- }
-  digitalWrite (ledY,0);
-
- digitalWrite (ledR,1);
- delay(1000);
+ 
+void loop()
+{ 
   digitalWrite (ledR,0);
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("   Press Start");
+  double key = analogRead(A0);
+  if (key > 1000)  //taking input form LCD-Keypad
+  {
+    startsignal = LOW;
+  }
+  startpgm();
 }
+
+
+
+void startpgm()
+{
+  if(startsignal == LOW)
+  {
+    int i;
+    m = 0;
+    digitalWrite (ledG,1);
+    a = millis();
+    lcd.setCursor(0,0);
+    while(m < 12)             //after 12 mins loop ends
+    {
+      lcd.clear();
+      lcd.print("     TIME:");
+      c = millis();
+      s = ((c - a) / 1000);
+      int temps = s;
+      if(temps>=60)
+      {
+        m=s/60;
+        temps=s%60;
+      }
+      lcd.setCursor(5,1);
+      if(m/10==0)
+      {
+        lcd.print("0");
+      }
+      lcd.print(m);
+      lcd.setCursor(7,1);
+      lcd.print(":");
+      lcd.setCursor(8,1);
+      lcd.print(temps);
+      delay(999);
+      if(m>=10)
+      {
+        digitalWrite (ledG,0);
+        digitalWrite (ledY,1);
+      }
+    }
+    digitalWrite (ledY,0);
+    digitalWrite (ledR,1);
+    lcd.clear();
+    lcd.setCursor(0,0);
+    lcd.print("   Thank You!");
+    for(i=0;i<6;i++)            //blinking LEDs in series for 1 min
+    {
+      digitalWrite (ledR,1);
+      delay(4000);
+      digitalWrite (ledR,0);
+      digitalWrite (ledY,1);
+      delay(3000);
+      digitalWrite (ledY,0);
+      digitalWrite (ledG,1);
+      delay(3000);
+      digitalWrite (ledG,0);
+    }
+    digitalWrite (ledR,1);   
+    delay(60000);
+  } 
+}
+
 ```
 
 ## Working in simulation
 
-<div id="example1">
-<wokwi-led color="green" pin="1" label="1"></wokwi-led>
-<wokwi-led color="yellow" pin="2" label="2"></wokwi-led>
-<wokwi-led color="red" pin="3" label="3"></wokwi-led>
+<div id="example2">
+<wokwi-led color="green" pin="9" label="1"></wokwi-led>
+<wokwi-led color="yellow" pin="10" label="2"></wokwi-led>
+<wokwi-led color="red" pin="11" label="3"></wokwi-led>
 <span id="simulation-time"></span></div>
 
 ```cpp
-#define ledG 1
-#define ledY 2
-#define ledR 3
+#define ledG 9
+#define ledY 10
+#define ledR 11
 
 
 void setup() {
@@ -150,7 +225,7 @@ void loop() {
 }
 
 ```
-@AVR8js.sketch
+@AVR8js.sketch(example2)
 
 ## Working in real world
 
