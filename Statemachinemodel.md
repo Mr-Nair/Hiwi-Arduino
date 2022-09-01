@@ -1,14 +1,14 @@
 
 <!--
 
-author:   Sebastian Zug
-email:    sebastian.zug@informatik.tu-freiberg.de
-version:  0.0.1
+author:   Sebastian Zug & André Dietrich
+email:    zug@ovgu.de   & andre.dietrich@ovgu.de
+version:  1.1.7
 language: de
 narrator: Deutsch Female
 
-import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
-
+import: https://github.com/LiaTemplates/AVR8js/main/README.md#10
+        
 
 -->
 
@@ -16,14 +16,25 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/Statemachinemodel.md)
 
-## Description
+# Representing Time Keeper in a finite state machine model
+## What is a finite state machine model??
 
->Representing Time Keeper in finite state machine model.
+> A finite-state machine (FSM) or finite-state automaton (automata), is a mathematical model of computation. It is an abstract machine that can be in exactly one of a finite number of states at any given time.
 
-## Code
+## Representation
 
-```cpp 
+```mermaid
+stateDiagram-v2
+    Green --> Yellow: 10mins
+    Yellow --> Red: 2mins
+    Red --> Green: 1min
 
+```
+
+   
+## Code             
+
+```cpp        Automata
 struct def{
 
     int state;
@@ -94,18 +105,14 @@ void loop() {
 
 ## Working in simulation
 
-<div id="example2">
-<wokwi-led color="green" pin="9" label="1"></wokwi-led>
-<wokwi-led color="yellow" pin="10" label="2"></wokwi-led>
-<wokwi-led color="red" pin="11" label="3"></wokwi-led>
-<span id="simulation-time"></span></div>
+<div>
+  <wokwi-led color="red" pin="13" port="B" label="13"></wokwi-led>
+  <wokwi-led color="yellow" pin="12" port="B" label="12"></wokwi-led>
+  <wokwi-led color="green" pin="11" port="B" label="11"></wokwi-led>
+  <span id="simulation-time"></span>
+</div>
 
-```cpp
-#define ledG 9
-#define ledY 10
-#define ledR 11
-
-
+```cpp             Automata
 struct def{
 
     int state;
@@ -122,14 +129,17 @@ struct def fsm[5] = {
 //  |   next  |  Yellow       |
 //  |    |    |   |    Green  |
 //----------------------------------------------
-{   0,   1,   0,  0,    1,      600},
-{   1,   2,   0,  1,    0,      120},
-{   2,   3,   1,  0,    1,      10},
-{   3,   4,   0,  1,    0,      5},
-{   4,   0,   0,  0,    1,      5}
+{   0,   1,   0,  0,    1,      10},
+{   1,   2,   0,  1,    0,      10},
+{   2,   3,   1,  0,    1,      6},
+{   3,   4,   0,  1,    0,      2},
+{   4,   0,   0,  0,    1,      2}
 };                                        // variable for finite state machine
 
 
+const int ledG = 11;
+const int ledY = 12;  
+const int ledR = 13;
 int state = 0;
 int i;
 
@@ -151,7 +161,7 @@ void loop() {
 
   if (state>=2)            // Blinking of red, yellow and green LEDs marking the end
   {
-    for(i=0;i<4;i++)
+    for(i=0;i<6;i++)
     {
         state = 2;
         while(state>=2)
@@ -169,10 +179,10 @@ void loop() {
   }
 }
 
-
 ```
-@AVR8js.sketch(example2)
+@AVR8js.sketch
 
+> Try changing the values of timer 
 
 
 
