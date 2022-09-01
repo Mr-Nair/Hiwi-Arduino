@@ -17,8 +17,7 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/README.md)
 
 
-# Arduino Programming Tutorial
-
+# Arduino Programming Tutorial (Time Keeper)
 ## Description
 <br>
 <br>
@@ -69,7 +68,7 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 ## Code
 
-```cpp   LED Light
+```cpp   Time Keeper
 
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7); 
@@ -190,7 +189,7 @@ void startpgm()
 <wokwi-led color="red" pin="11" label="3"></wokwi-led>
 <span id="simulation-time"></span></div>
 
-```cpp
+```cpp            Time Keeper
 #define ledG 9
 #define ledY 10
 #define ledR 11
