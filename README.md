@@ -38,12 +38,13 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 ![Schematic Circuit Diagram](Images/Schematic_Circuit_Diagram.jpg)
 
 
+
 ## Question Time!!
 
-> Which leg of this LED is Anode?<img src=Images\led.avif width="150" height="150" />
+> Which leg of this LED is Anode?<img src=Images/Leds.jpg width="150" height="150" />
 
-[(X)] Left
-[( )] Right
+[( )] Left
+[(X)] Right
 
 
 > Which are the commonly Arduino board(s)?
@@ -66,9 +67,48 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 - [( )] Nanoseconds
 
 
-## Code
+## Code 1
 
-```cpp   Time Keeper
+
+```cpp            Time Keeper (Without LCD attachment)
+#define ledG 9
+#define ledY 10
+#define ledR 11
+
+
+void setup() {
+pinMode(ledG, OUTPUT);
+pinMode(ledY, OUTPUT);
+pinMode(ledR, OUTPUT);
+}
+
+void loop() {
+
+ digitalWrite(ledG, HIGH);
+ delay(10000);   //activates green light for 10 sec
+  digitalWrite(ledG, LOW); 
+  digitalWrite(ledY, HIGH);
+ delay(5000); //activates yellow light for 5 seconds 
+ int i=0;
+    while( i<5) //5 sec yellow light flash
+    {  
+       delay(500); 
+       digitalWrite(ledY, LOW);
+       delay(500);
+       digitalWrite(ledY, HIGH);
+        i++;
+ }
+  digitalWrite(ledY, LOW);
+ digitalWrite(ledR, HIGH);
+ delay(5000);
+  digitalWrite(ledR, LOW);
+}
+
+```
+
+## Code 2
+
+```cpp   Time Keeper (With LCD attachment)
 
 #include <LiquidCrystal.h>
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7); 
@@ -125,7 +165,7 @@ void startpgm()
   {
     int i;
     m = 0;
-    digitalWrite (ledG,1);
+    digitalWrite (ledG,1);  // green light ON
     a = millis();
     lcd.setCursor(0,0);
     while(m < 12)             //after 12 mins loop ends
@@ -162,20 +202,17 @@ void startpgm()
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("   Thank You!");
-    for(i=0;i<6;i++)            //blinking LEDs in series for 1 min
+    for(i=0;i<300;i++)            //flashing Red LED
     {
-      digitalWrite (ledR,1);
-      delay(4000);
       digitalWrite (ledR,0);
-      digitalWrite (ledY,1);
-      delay(3000);
-      digitalWrite (ledY,0);
-      digitalWrite (ledG,1);
-      delay(3000);
-      digitalWrite (ledG,0);
+      delay(1000);
+      digitalWrite (ledR,1);
+      delay(1000);
     }
-    digitalWrite (ledR,1);   
-    delay(60000);
+    delay(1000);
+    digitalWrite (ledR,0);   
+    digitalWrite (ledG,0);
+    digitalWrite (ledY,0);
   } 
 }
 
@@ -189,7 +226,7 @@ void startpgm()
 <wokwi-led color="red" pin="11" label="3"></wokwi-led>
 <span id="simulation-time"></span></div>
 
-```cpp            Time Keeper
+```cpp            Time Keeper (Customized version)
 #define ledG 9
 #define ledY 10
 #define ledR 11
@@ -237,3 +274,5 @@ void loop() {
 
 
  
+
+

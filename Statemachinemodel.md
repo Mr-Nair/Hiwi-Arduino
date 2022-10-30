@@ -1,9 +1,8 @@
-
 <!--
 
 author:   Sebastian Zug & André Dietrich
 email:    zug@ovgu.de   & andre.dietrich@ovgu.de
-version:  1.1.7
+version:  0.1.7
 language: de
 narrator: Deutsch Female
 
@@ -53,9 +52,8 @@ struct def fsm[5] = {
 //----------------------------------------------
 {   0,   1,   0,  0,    1,      600},
 {   1,   2,   0,  1,    0,      120},
-{   2,   3,   1,  0,    1,      10},
-{   3,   4,   0,  1,    0,      5},
-{   4,   0,   0,  0,    1,      5}
+{   2,   3,   1,  0,    0,      1},
+{   3,   0,   0,  0,    0,      1},
 };                                        // variable for finite state machine
 
 const int ledG = 9;
@@ -80,23 +78,23 @@ void loop() {
   delay(fsm[state].timer*1000);
   state = fsm[state].next;
 
-  if (state>=2)            // Blinking of red, yellow and green LEDs marking the end
+  if (state == 2)            // Blinking of red
   {
-    for(i=0;i<4;i++)
+    for(i=0;i<300;i++)
     {
-        state = 2;
-        while(state>=2)
-        {
+        
            if (fsm[state].red == 1) digitalWrite(ledR, HIGH);
            else digitalWrite(ledR, LOW);
            if (fsm[state].yellow == 1) digitalWrite(ledY, HIGH);
            else digitalWrite(ledY, LOW);
-           if (fsm[state].green == 1) digitalWrite(ledG, HIGH);
-           else digitalWrite(ledG, LOW);
            delay(fsm[state].timer*1000);
-           state = fsm[state].next; 
-        }
+           state = 2;
+           if (fsm[state].red == 1) digitalWrite(ledR, HIGH);
+           else digitalWrite(ledR, LOW);
+           delay(fsm[state].timer*1000);
+           state = 3;                  
     }
+  state = fsm[state].next; 
   }
 }
 
@@ -129,11 +127,10 @@ struct def fsm[5] = {
 //  |   next  |  Yellow       |
 //  |    |    |   |    Green  |
 //----------------------------------------------
-{   0,   1,   0,  0,    1,      10},
-{   1,   2,   0,  1,    0,      10},
-{   2,   3,   1,  0,    1,      6},
-{   3,   4,   0,  1,    0,      2},
-{   4,   0,   0,  0,    1,      2}
+{   0,   1,   0,  0,    1,      6},
+{   1,   2,   0,  1,    0,      5},
+{   2,   3,   1,  0,    0,      1},
+{   3,   0,   0,  0,    0,      1}
 };                                        // variable for finite state machine
 
 
@@ -159,23 +156,23 @@ void loop() {
   delay(fsm[state].timer*1000);
   state = fsm[state].next;
 
-  if (state>=2)            // Blinking of red, yellow and green LEDs marking the end
+  if (state == 2)            // Blinking of red
   {
-    for(i=0;i<6;i++)
+    for(i=0;i<10;i++)
     {
-        state = 2;
-        while(state>=2)
-        {
+        
            if (fsm[state].red == 1) digitalWrite(ledR, HIGH);
            else digitalWrite(ledR, LOW);
            if (fsm[state].yellow == 1) digitalWrite(ledY, HIGH);
            else digitalWrite(ledY, LOW);
-           if (fsm[state].green == 1) digitalWrite(ledG, HIGH);
-           else digitalWrite(ledG, LOW);
            delay(fsm[state].timer*1000);
-           state = fsm[state].next; 
-        }
+           state = 2;
+           if (fsm[state].red == 1) digitalWrite(ledR, HIGH);
+           else digitalWrite(ledR, LOW);
+           delay(fsm[state].timer*1000);
+           state = 3;                  
     }
+  state = fsm[state].next; 
   }
 }
 
