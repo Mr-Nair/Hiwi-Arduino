@@ -22,13 +22,7 @@ import: https://github.com/LiaTemplates/AVR8js/main/README.md#10
 
 ## Representation
 
-```mermaid
-stateDiagram-v2
-    Green --> Yellow: 10mins
-    Yellow --> Red: 2mins
-    Red --> Green: 1min
-
-```
+![Mermaid](Images\Mermaid.jpg "Mermaid Representation")
 
    
 ## Code             
