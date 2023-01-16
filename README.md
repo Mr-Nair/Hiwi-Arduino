@@ -218,7 +218,7 @@ void startpgm()
 
 ```
 
-## Working in simulation
+## Simulation 
 
 <div id="example2">
 <wokwi-led color="green" pin="9" label="1"></wokwi-led>
@@ -263,16 +263,27 @@ void loop() {
 ```
 @AVR8js.sketch(example2)
 
-## Working in real world
+## Real World Working
+<img src=Images/Preview.jpg width="350" height="300" />
+
+<img src=Images/Preview_2.jpg width="300" height="300" align="left"/>
+
+###  Time Keeper (Without LCD attachment)
 
 <figure class="video_container">
-  <video controls="true" width=700
+  <video controls="true" width=500
    poster="Images/Preview.jpg">
     <source src="Images/VID_20220612172500.mp4" type="video/mp4">
   </video>
 </figure>
+**Following video is just a representation of the original 
 
+###  Time Keeper (With LCD attachment)
 
- 
-
-
+<figure class="video_container">
+  <video controls="true" width=500
+   poster="Images/Preview_2.jpg">
+    <source src="Images/VID_20230115235213.mp4" type="video/mp4">
+  </video>
+</figure>
+**Following video is just a representation of the original 
