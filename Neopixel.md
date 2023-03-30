@@ -118,15 +118,15 @@ void loop()
 
 ```cpp             Automata
 #include "FastLED.h"
-// Matrix size
+
 #define NUM_ROWS 1
 #define NUM_COLS 9
-// LEDs pin
+
 #define DATA_PIN 3
-// LED brightness
+
 #define BRIGHTNESS 180
 #define NUM_LEDS NUM_ROWS * NUM_COLS
-// Define the array of leds
+
 CRGB leds[NUM_LEDS];
 
 void setup() {
@@ -138,32 +138,28 @@ void loop() {
 for (int i = 0; i < 6; i++) 
     {
         for (int j = 0; j < 2; j++)
-        {
-          
+        {        
             leds[i] = CRGB::Green;  
             FastLED.show(); 
             delay(500);
             leds[i] = CRGB::Black;
             FastLED.show();
-            delay(500);
-            
+            delay(500);            
         }
         leds[i] = CRGB::Green; 
         FastLED.show();
     }
-
       for (int i = 6; i < 9; i++)
       {
          for (int j = 0; j < 2; j++)  
-         {
-          
+         {         
            leds[i] = CRGB::Yellow;
             FastLED.show();
             delay(500);
             leds[i] = CRGB::Black;
             FastLED.show();
             delay(500);           
-        }
+         }
         leds[i] = CRGB::Yellow; 
         FastLED.show();
         if(i==6)
@@ -186,12 +182,10 @@ for (int i = 0; i < 6; i++)
       }
       for (int i = 0; i < 10; i++)
         { 
-        leds[i] = CRGB::Black; // Turn off all LEDs
+        leds[i] = CRGB::Black;
         FastLED.show();
         }
     }
-  
-
 ```
 @AVR8js.sketch(matrix-experiment)
 
@@ -199,4 +193,81 @@ for (int i = 0; i < 6; i++)
 > Try changing the values of timer 
 
 
+## Commented version of the code
+```cpp    
+// Library         
+#include "FastLED.h"
 
+// Matrix size
+#define NUM_ROWS 1
+#define NUM_COLS 9
+
+// LEDs pin
+#define DATA_PIN 3
+
+// LED brightness
+#define BRIGHTNESS 180
+#define NUM_LEDS NUM_ROWS * NUM_COLS
+
+// Define the array of leds
+CRGB leds[NUM_LEDS];
+
+//Initialize FastLED Library and Set brightness
+void setup() {
+  FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, NUM_LEDS);
+  FastLED.setBrightness(BRIGHTNESS);
+}
+
+void loop() {
+for (int i = 0; i < 6; i++) // timer loop for Green light
+    {
+        for (int j = 0; j < 2; j++)  // Loop For Blinking of green light
+        {       
+            leds[i] = CRGB::Green;  
+            FastLED.show(); 
+            delay(500);
+            leds[i] = CRGB::Black;
+            FastLED.show();
+            delay(500);            
+        }
+        leds[i] = CRGB::Green; // Glow LEDs Sequently
+        FastLED.show();
+    }
+      for (int i = 6; i < 9; i++) // timer loop for Yellow and Red light
+     {
+         for (int j = 0; j < 2; j++)  // Loop For Blinking of Yellow light
+         {
+           leds[i] = CRGB::Yellow;
+            FastLED.show();
+            delay(500);
+            leds[i] = CRGB::Black;
+            FastLED.show();
+            delay(500);           
+         }
+        leds[i] = CRGB::Yellow; // Glow LEDs Sequently
+        FastLED.show();
+        if(i==6)
+        {
+          for (int n = 0; n < 8; n++) // Turn LEDs Yellow retrospectively
+          {
+            leds[n] = CRGB::Yellow; 
+            FastLED.show();
+          }
+        }
+        else if(i==8)
+        {
+        for (int n = 0; n < 10; n++) // Turn all LEDs Red
+          {
+            leds[n] = CRGB::Red; 
+            FastLED.show();
+          }
+          delay(10000);
+        }
+      }
+      for (int i = 0; i < 10; i++) // Turn off all LEDs
+        { 
+        leds[i] = CRGB::Black; 
+        FastLED.show();
+        }
+  }
+```
