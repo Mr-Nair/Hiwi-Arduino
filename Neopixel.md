@@ -60,7 +60,7 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
     [(X)] Arduino
     [( )] Raspberry Pi
 
-## guide
+## Guide
 
 [Click Here to access the guide](https://onedrive.live.com/?authkey=%21ALCZN3IZwIrTbe8&id=767BB1ABBFE433F5%21181480&cid=767BB1ABBFE433F5&parId=root&parQt=sharedby&o=OneUp)    
 
