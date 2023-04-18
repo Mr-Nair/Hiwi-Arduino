@@ -3,7 +3,7 @@
 author:   Sebastian Zug & André Dietrich
 email:    zug@ovgu.de   & andre.dietrich@ovgu.de
 version:  0.1.7
-language: de
+language: EN
 narrator: US English Female Female
 
 
