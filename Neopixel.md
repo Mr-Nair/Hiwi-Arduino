@@ -4,7 +4,7 @@ author:   Sebastian Zug & André Dietrich
 email:    zug@ovgu.de   & andre.dietrich@ovgu.de
 version:  0.1.7
 language: de
-narrator: Deutsch Female
+narrator: US English Female Female
 
 
 import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
