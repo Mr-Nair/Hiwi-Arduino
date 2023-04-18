@@ -24,11 +24,6 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 ![Arduino](Images\Arduino_Uno.jpg "Arduino")
 ![Raspberry Pi](Images\RaspberryPi.jpeg "Raspberry Pi")
 
-## Representation
-
-![Arduino](Images\Arduino_Uno.jpg "Arduino")
-![Raspberry Pi](Images\RaspberryPi.jpeg "Raspberry Pi")
-
 ## Question Time!!
 
 > 1. What type of board is Arduino?
