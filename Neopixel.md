@@ -12,14 +12,12 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 -->
 
-
-
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/Neopixel.md)
 
 # Arduino Programming Tutorial Using Neo Pixel
 ## Introduction
 
-> Arduino and Raspberry Pi are different types of boards that can be used for various projects. Arduino is a microcontroller-based board that has a simple design and software structure and a strong I/O capability. Raspberry Pi is a microprocessor-based board that is essentially a mini computer; it has its own OS, supports the internet, and can connect to various devices.
+> Arduino and Raspberry Pi are different types of boards that can be used for various projects. Arduino is a microcontroller-based board that has a simple design and software structure and a strong I/O capability. Raspberry Pi is a microprocessor-based board that is essentially a mini computer; it has its own OS, supports the internet, and can connect to various devices. Raspberry Pi has more processing power and can run more complex software, while Arduino is simpler to use and has a large community of users who share their projects and code.
 
 ![Arduino](Images\Arduino_Uno.jpg "Arduino")
 ![Raspberry Pi](Images\RaspberryPi.jpeg "Raspberry Pi")
@@ -62,7 +60,7 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 ## Guide
 
-[Click Here to access the guide](https://onedrive.live.com/?authkey=%21ALCZN3IZwIrTbe8&id=767BB1ABBFE433F5%21181480&cid=767BB1ABBFE433F5&parId=root&parQt=sharedby&o=OneUp)    
+[Click Here to access the guide](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/Guide.md)    
 
 
 ## Working in simulation
