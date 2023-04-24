@@ -1,6 +1,6 @@
 
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/Guide.md)
-...
+
 # Guide For Raspberry Pi - Arduino Interaction  
 ![Vscode](Images\Arduino_Uno.jpg "")
 

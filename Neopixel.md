@@ -60,7 +60,8 @@ import: https://raw.githubusercontent.com/liaTemplates/AVR8js/main/README.md
 
 ## Guide
 
-[Click Here to access the guide](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/Guide.md)    
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/Guide.md)
+![Guide](Images\Guide.png "")
 
 
 ## Working in simulation
