@@ -45,7 +45,8 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 >
 > TIP: Only [pathToYourFolder]( ie. E:\OneDrive\Desktop\GuideFolder) will be different from the example, You may copy paste the rest.
 
-  ![Vscode](Images\GStep2.2.png "") 
+![Vscode](Images\GStep2.2.png "") 
+
 
 * User can Enter **“learning”** as password when prompted. !! WARNING case sensitive !!
 
@@ -135,8 +136,9 @@ By adding “ -v” at the end of the upload command, you could have a console o
 
 ## 8. Remove Your Data
 
-Please don't forget to remove your uploaded directory. Enter the following command in 
-console: **rm -rf uploadpoint/[YourFolderName]/**
+Please don't forget to remove your uploaded directory.
+
+To do so, Enter the following command in console: **rm -rf uploadpoint/[YourFolderName]/**
 
 The function is depicted here:
 
