@@ -45,7 +45,7 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 >
 > TIP: Only [pathToYourFolder]( ie. E:\OneDrive\Desktop\GuideFolder) will be different from the example, You may copy paste the rest.
 
-    ![Vscode](Images\GStep2.2.png "") 
+  ![Vscode](Images\GStep2.2.png "") 
 
 * User can Enter **“learning”** as password when prompted. !! WARNING case sensitive !!
 
@@ -103,6 +103,7 @@ It informs that the Arduino is connected to the Raspberry Pi via the ttyACM0 Por
 > **arduino-cli compile -b arduino:avr:uno** Guidefolder/ 
 
 A successful compilation will look like this: 
+
 ![Folder Path](Images\GStep6.png "")
 
 > If the Raspberry compiler reports an error, It is recommended to re-upload the corrected file by repeating the above steps. If you have experience, then you may use the internal editor by entering the following command: **nano [filename]** 
@@ -110,6 +111,7 @@ A successful compilation will look like this:
 ## 7. Upload Script To Arduino
 
 * Enter into your Folder directory via "**cd**" command, as shown here:
+
 ![Folder Path](Images\GStep7.1.png "")
 
 > Please note that only one user can interact with the arduino at a time!
@@ -128,13 +130,16 @@ A successful compilation will look like this:
 Once the RPi has uploaded your script, it will replace the currently employed script with yours and you can Arduino away!
 
 By adding “ -v” at the end of the upload command, you could have a console output to see the process.
+
 ![Folder Path](Images\GStep7.2.png "")
 
 ## 8. Remove Your Data
 
-Please don't forget to remove your uploaded directory. Enter the following command in console: **rm -rf uploadpoint/[YourFolderName]/**
+Please don't forget to remove your uploaded directory. Enter the following command in 
+console: **rm -rf uploadpoint/[YourFolderName]/**
 
 The function is depicted here:
+
 ![Folder Path](Images\GStep8.png "")
 
 > Please be careful and only delete your own data.
