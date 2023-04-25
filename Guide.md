@@ -2,13 +2,13 @@
 [![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/Mr-Nair/Hiwi-Arduino/main/Guide.md)
 
 # Guide For Raspberry Pi - Arduino Interaction  
-![Vscode](Images\Arduino_Uno.jpg "")
+![Into](Images\Arduino_Uno.jpg "")
 
 ## 1. Prepare And Save Script
 
 Prepare your Arduino Script (**in ".ino" format**) in the programming software of your choosing. Rename the script with a unique name and save it in a new folder with the same name. 
 
-![Folder Path](Images\GStep1.2.png "")
+![Step1.1](Images\GStep1.2.png "")
 
 > In this example:    
 >
@@ -18,9 +18,9 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 >
 > File Name: "**GuideFolder.ino**"
 
-![File Path](Images\GStep1.3.png "")
+![Step1.2](Images\GStep1.3.png "")
 
-![Vscode](Images\GStep1.1.png "")
+![Step1.3](Images\GStep1.1.png "")
 
 ## 2. Upload To Raspberry Pi
 
@@ -28,7 +28,7 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 * Open a new console window by: 
 
     * Press Win+R, then type CMD into the window and press enter.
-  ![Vscode](Images\GStep2.png "")  
+  ![Step2](Images\GStep2.png "")  
 
 * Enter the following command: **scp -pr [pathToYourFolder] [user]@[ipadress]:[pathToDestination]** 
 
@@ -45,7 +45,7 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 >
 > TIP: Only [pathToYourFolder]( ie. E:\OneDrive\Desktop\GuideFolder) will be different from the example, You may copy paste the rest.
 
-![Vscode](Images\GStep2.2.png "") 
+![Step2.2](Images\GStep2.2.png "") 
 
 
 * User can Enter **“learning”** as password when prompted. !! WARNING case sensitive !!
@@ -70,7 +70,7 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 
     * Please note that the password will not be visible while typing!
 
-![Vscode](Images\GStep3.png "")
+![Step3](Images\GStep3.png "")
 
 * You are now successfully connected to the Raspberry Pi.
 
@@ -78,7 +78,7 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 
 You can find the folder which you have uploaded in step 2 under “**uploadpoint**” directory in the Raspberry Pi via "**cd**" command, as shown here:
 
-![Folder Path](Images\GStep4.png "")
+![Step4](Images\GStep4.png "")
 
 You might see other folders created by students, please don't forget to clean up YOUR FOLDER after your work. (The Raspberry Pi has limited storage) 
 
@@ -86,7 +86,7 @@ You might see other folders created by students, please don't forget to clean up
 
 To check whether the Arduino is connected to the Raspberry Pi, enter the following command in console: **arduino-cli board list**
 
-![Folder Path](Images\GStep5.png "")
+![Step5](Images\GStep5.png "")
 
 It informs that the Arduino is connected to the Raspberry Pi via the ttyACM0 Port and also shows the type of the Arduino used. Here, Arduino Uno is used.
 
@@ -105,7 +105,7 @@ It informs that the Arduino is connected to the Raspberry Pi via the ttyACM0 Por
 
 A successful compilation will look like this: 
 
-![Folder Path](Images\GStep6.png "")
+![Step6](Images\GStep6.png "")
 
 > If the Raspberry compiler reports an error, It is recommended to re-upload the corrected file by repeating the above steps. If you have experience, then you may use the internal editor by entering the following command: **nano [filename]** 
 
@@ -113,7 +113,7 @@ A successful compilation will look like this:
 
 * Enter into your Folder directory via "**cd**" command, as shown here:
 
-![Folder Path](Images\GStep7.1.png "")
+![Step7.1](Images\GStep7.1.png "")
 
 > Please note that only one user can interact with the arduino at a time!
 
@@ -132,7 +132,7 @@ Once the RPi has uploaded your script, it will replace the currently employed sc
 
 By adding “ -v” at the end of the upload command, you could have a console output to see the process.
 
-![Folder Path](Images\GStep7.2.png "")
+![Step7.2](Images\GStep7.2.png "")
 
 ## 8. Remove Your Data
 
@@ -142,7 +142,7 @@ To do so, Enter the following command in console: **rm -rf uploadpoint/[YourFold
 
 The function is depicted here:
 
-![Folder Path](Images\GStep8.png "")
+![Step8](Images\GStep8.png "")
 
 > Please be careful and only delete your own data.
 
