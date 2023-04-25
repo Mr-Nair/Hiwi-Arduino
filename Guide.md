@@ -137,5 +137,5 @@ Please don't forget to remove your uploaded directory. Enter the following comma
 The function is depicted here:
 ![Folder Path](Images\GStep8.png "")
 
-> Please be careful and only delete their own data.
+> Please be careful and only delete your own data.
 
