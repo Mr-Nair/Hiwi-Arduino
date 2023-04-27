@@ -24,7 +24,7 @@ Prepare your Arduino Script (**in ".ino" format**) in the programming software o
 
 ## 2. Upload To Raspberry Pi
 
-* Connect to Dr Jacob’s Raspberry Pi 3+’s Wi-Fi Network. (**Password:"learningwithdoctor"**)
+* Connect to Dr Jacob’s Raspberry Pi 3+’s Wi-Fi Network. (**Password:"learningwiththedoctor"**)
 * Open a new console window by: 
 
     * Press Win+R, then type CMD into the window and press enter.
